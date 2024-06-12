@@ -220,3 +220,230 @@ x==========x]
 [2024-06-08 20:43:08,276: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-06-12 09:24:52,197: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-12 09:24:52,197: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-12 09:24:52,197: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-12 09:24:52,197: INFO: common: created directory at: artifacts]
+[2024-06-12 09:24:52,208: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-12 09:24:52,210: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-12 09:53:07,693: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.43.75:8080]
+[2024-06-12 09:53:07,693: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-12 09:58:23,732: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 09:58:23] "GET / HTTP/1.1" 200 -]
+[2024-06-12 10:05:34,574: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-06-12 10:05:34,618: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:05:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 10:10:25,531: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:10:25] "GET / HTTP/1.1" 200 -]
+[2024-06-12 10:10:37,538: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-06-12 10:10:37,538: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:10:37] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 10:14:45,270: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.43.75:8080]
+[2024-06-12 10:14:45,270: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-12 10:14:45,764: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:14:45] "GET / HTTP/1.1" 200 -]
+[2024-06-12 10:14:55,727: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:14:55] "GET / HTTP/1.1" 200 -]
+[2024-06-12 10:15:08,506: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-06-12 10:15:08,530: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 10:15:08] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 19:33:58,481: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.43.75:8080]
+[2024-06-12 19:33:58,482: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-12 19:34:19,779: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:34:19] "GET / HTTP/1.1" 200 -]
+[2024-06-12 19:34:28,603: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-06-12 19:34:28,627: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:34:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 19:36:57,179: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:36:57] "GET / HTTP/1.1" 200 -]
+[2024-06-12 19:37:31,035: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.43.75:8080]
+[2024-06-12 19:37:31,035: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-12 19:37:45,717: WARNING: hdf5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-06-12 19:37:47,392: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 25, in predict
+    if result[0] == 1:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+[2024-06-12 19:37:47,392: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:37:47] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 19:38:46,112: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:38:46] "GET / HTTP/1.1" 200 -]
+[2024-06-12 19:38:59,341: WARNING: hdf5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2024-06-12 19:39:00,408: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\nikhi\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "e:\kidney-disease-classificatin-deep-learning-project\src\cnnClassifier\pipeline\prediction.py", line 25, in predict
+    if result[0] == 1:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+[2024-06-12 19:39:00,408: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:39:00] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-12 19:49:51,236: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-12 19:49:51,251: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-12 19:49:51,266: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-12 19:49:51,275: INFO: common: created directory at: artifacts]
+[2024-06-12 19:49:51,275: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-12 19:49:51,277: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-12 19:51:09,194: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-12 19:51:10,037: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-12 19:51:10,043: INFO: main: *******************]
+[2024-06-12 19:51:10,043: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-06-12 19:51:10,044: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-12 19:51:10,051: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-12 19:51:10,052: INFO: common: created directory at: artifacts]
+[2024-06-12 19:51:10,053: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-06-12 19:51:10,653: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-06-12 19:51:10,906: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-06-12 19:51:10,906: INFO: main: *******************]
+[2024-06-12 19:51:10,906: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-06-12 19:51:10,910: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-12 19:51:10,912: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-12 19:51:10,912: INFO: common: created directory at: artifacts]
+[2024-06-12 19:51:10,913: INFO: common: created directory at: artifacts\training]
+[2024-06-12 19:52:43,994: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-06-12 19:52:43,994: INFO: main: *******************]
+[2024-06-12 19:52:43,994: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-06-12 19:52:43,996: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-12 19:52:44,002: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-12 19:52:44,002: INFO: common: created directory at: artifacts]
+[2024-06-12 19:53:11,592: INFO: common: json file saved at: scores.json]
+[2024-06-12 19:53:11,593: INFO: common: json file saved at: scores.json]
+[2024-06-12 19:53:11,593: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-06-12 19:53:51,207: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.43.75:8080]
+[2024-06-12 19:53:51,207: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-12 19:54:02,673: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:54:02] "GET / HTTP/1.1" 200 -]
+[2024-06-12 19:54:12,758: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:54:12] "POST /predict HTTP/1.1" 200 -]
+[2024-06-12 19:54:58,756: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:54:58] "POST /predict HTTP/1.1" 200 -]
+[2024-06-12 19:55:14,366: INFO: _internal: 127.0.0.1 - - [12/Jun/2024 19:55:14] "POST /predict HTTP/1.1" 200 -]
